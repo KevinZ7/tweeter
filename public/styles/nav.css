@@ -1,0 +1,36 @@
+#nav-bar{
+  position:fixed;
+  top:0;
+  height: 80px;
+  width: 100%;
+  background-color: #00a087;
+  color: #e8fdff;
+  padding-left: 2em;
+  padding-right: 2em;
+  z-index: 1;
+}
+
+#nav-bar .logo{
+  width: 80px;
+  height: 80px;
+  float: left;
+}
+
+#nav-bar .header{
+  padding-left: 10px;
+  font-size: 200%;
+  line-height: 80px;
+  float: left;
+}
+
+#form-toggle{
+  float: right;
+  margin: 10px;
+  background-color: #ffffff;
+  color: #61a899;
+  padding: 20px 0px 20px 0px;
+  width: 100px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid black;
+}
