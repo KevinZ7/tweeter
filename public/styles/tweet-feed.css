@@ -1,41 +1,59 @@
 
+/*Styling used for the tweet feed*/
 .tweets{
-  /*background-color: #eee;*/
   border-radius: 5px;
   border: 1px solid #cccccc;
   margin: 10px 0px 10px 0px;
   width: auto;
-
-  /*position: relative;*/
-  /*z-index: 10;*/
 }
 
+/*Hover states for the tweet articles*/
 .tweets:hover{
   border-color: #708090;
-
-    /*  $('.author').css('color','#244751');
-      $('.tag').css('color','#708090');*/
 }
 
-.tweets-hover{
-  border-color: #708090;
+.tweets:hover .icons{
+  opacity: 1;
 }
+
+.tweets:hover .tweet-header{
+  opacity: 1;
+}
+
+.tweets:hover .fa-heart{
+  opacity: .5;
+}
+
+.tweets:hover .fa-font-awesome-flag{
+  opacity: .5;
+}
+
+.tweets:hover .fa-retweet{
+  opacity: .5;
+}
+
+.tweets:hover .fa-heart:hover{
+  opacity: 1;
+}
+
+
+
+.tweets:hover .fa-font-awesome-flag:hover{
+  opacity: 1;
+}
+
+.tweets:hover .fa-retweet:hover{
+  opacity: 1;
+}
+
 
 .tweet-header{
-  /*border-radius: 5px;*/
   height: 50px;
   background-color: #eee;
   overflow: auto;
   opacity: 0.5;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  /*position: relative;*/
-  /*z-index: -10;*/
-
-}
-
-.tweets:hover .tweet-header{
-  opacity: 1;
 }
 
 .tweet-header .profile-picture{
@@ -56,22 +74,12 @@
   margin: 5px 0px 0px 0px;
 }
 
-.author-hover{
-
-}
-
-
-
 .tweet-header .tag{
   color: #a3a3a3;
   font-size: 60%;
   float: right;
   margin-top: 13px;
   margin-right: 7px;
-}
-
-.tag-hover{
-
 }
 
 .tweet-body{
@@ -85,4 +93,14 @@
   font-size: 60%;
   padding: 7px;
   border-top: 1px solid #eee;
+}
+
+.icons{
+  float: right;
+  opacity: 0;
+}
+
+.icons i{
+  padding: 2px;
+  color: #79ccb9;
 }

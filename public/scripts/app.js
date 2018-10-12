@@ -1,4 +1,4 @@
-
+//create a html structure that will be appended to the tweets container
 function createTweetElement(data){
   var $article = $('<article>').addClass('tweets');
   var $header = $('<header>').addClass('tweet-header');
@@ -7,17 +7,17 @@ function createTweetElement(data){
   var $tag = $('<span>').addClass('tag').html(data.user.handle);
   var $body = $('<main>').addClass('tweet-body').text(data.content.text);
   var $footer = $('<footer>').addClass('tweet-footer').text(moment(data.created_at).fromNow());
+  var $icons = $('<section>').addClass('icons').html(`<i class="fas fa-heart heart"></i><i class="fab fa-font-awesome-flag flag"></i><i class="fas fa-retweet retweet"></i>`);
 
-  $header.append($profile);
-  $header.append($author);
-  $header.append($tag);
-  $article.append($header);
-  $article.append($body);
-  $article.append($footer);
+  $header.append($profile,$author,$tag);
+  $footer.append($icons);
+  $article.append($header,$body,$footer);
 
   return $article;
 }
 
+//load in a array of tweet objects and loop through calling createTweetElement
+//each time to prepend them to the tweet feed container html structure
 function renderTweets(tweets) {
   $('.tweet-container').empty();
   var tweetOrder = tweets.reverse();
@@ -27,6 +27,7 @@ function renderTweets(tweets) {
   });
 }
 
+//ajax get requets that renders the tweets
 function loadTweets(){
   $.ajax('/tweets', {
     method: 'GET',
@@ -37,21 +38,23 @@ function loadTweets(){
   })
 }
 
+//initally hide the compose form section
 $('#tweet-form-section').hide();
+//initially hide the submit error messages
 $('#alert').hide();
-
-
-
-
 
 
 loadTweets();
 
+//click event listener that handles the event when the user clicks
+//the submit tweet button
 $("#send").on("click", function(event){
   event.preventDefault();
+
   var counterNumber = parseInt($("#counter").text(),10);
 
   if(counterNumber <=0 ){
+    $('#alert').slideUp();
     $('#alert').show({complete: function(){
       $('#alert').text('Your tweet has exceeded the text limit!');
     }});
@@ -75,17 +78,13 @@ $("#send").on("click", function(event){
   }
 });
 
+//click toggle listener that will make the tweet form appear when clicked
 $("#form-toggle").click(function(){
   $("#tweet-form-section").slideToggle({complete: function(){
     $("#text").focus();
   }});
 });
 
-// var $tweet = createTweetElement(testDatabase);
-
-// // Test / driver code (temporary)
-// console.log($tweet); // to see what it looks like
-// $('.tweet-container').append($tweet);
 
 
 
