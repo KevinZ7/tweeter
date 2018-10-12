@@ -12,6 +12,9 @@ This project is created with the MEAN stack, jQuery, and Ajax technologies to al
 4. Go to <http://localhost:8080/> in your browser.
 
 ## Screenshots
+[Viewing tweets](https://github.com/KevinZ7/tweeter/blob/master/docs/Screen%20Shot%202018-10-12%20at%201.19.04%20PM.png)
+[Creating a tweet](https://github.com/KevinZ7/tweeter/blob/master/docs/Screen%20Shot%202018-10-12%20at%201.19.30%20PM.png)
+[Viewing created tweet](https://github.com/KevinZ7/tweeter/blob/master/docs/Screen%20Shot%202018-10-12%20at%201.19.51%20PM.png)
 
 ## Dependencies
 
