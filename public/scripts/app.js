@@ -6,7 +6,7 @@ function createTweetElement(data){
   var $author = $('<h3>').addClass('author').html(data.user.name);
   var $tag = $('<span>').addClass('tag').html(data.user.handle);
   var $body = $('<main>').addClass('tweet-body').text(data.content.text);
-  var $footer = $('<footer>').addClass('tweet-footer').html(data.created_at);
+  var $footer = $('<footer>').addClass('tweet-footer').text(moment(data.created_at).fromNow());
 
   $header.append($profile);
   $header.append($author);
